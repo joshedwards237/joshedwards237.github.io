@@ -11,7 +11,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d src"
   },
-  "homepage": "https://joshedwards237.github.io",
+  "homepage": "https://joshedwards237.github.io/joshedwards237.github.io",
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-accordion": "^1.2.0",
