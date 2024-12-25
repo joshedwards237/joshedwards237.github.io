@@ -1,0 +1,20 @@
+import { jsx as _jsx } from "react/jsx-runtime";
+import { motion } from 'framer-motion';
+import { useMousePosition } from '@/hooks/useMousePosition';
+export function ProjectImage({ src, alt, isVisible }) {
+    const { x, y } = useMousePosition();
+    return (_jsx(motion.div, { className: "pointer-events-none fixed z-50", style: {
+            top: 0,
+            left: 0,
+            width: '240px',
+            height: '160px',
+        }, animate: {
+            opacity: isVisible ? 1 : 0,
+            x: x + 20, // Offset slightly to the right of cursor
+            y: y - 160, // Position above cursor (negative height)
+        }, transition: {
+            opacity: { duration: 0.2 },
+            x: { duration: 0.02, ease: "linear" },
+            y: { duration: 0.02, ease: "linear" },
+        }, children: _jsx("div", { className: "w-full h-full rounded-lg overflow-hidden shadow-lg bg-white/10 backdrop-blur-sm", children: _jsx("img", { src: src, alt: alt, className: "w-full h-full object-cover", draggable: "false" }) }) }));
+}

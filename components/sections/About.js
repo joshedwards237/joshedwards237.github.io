@@ -1,0 +1,8 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { User } from 'lucide-react';
+import { AnimatedSection } from '../AnimatedSection';
+import { Card } from '../ui/card';
+import profileImage from '../../josh.jpg';
+export function About() {
+    return (_jsx("section", { className: "py-20 px-8", children: _jsx(AnimatedSection, { children: _jsx("div", { className: "max-w-5xl mx-auto", children: _jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-12 items-center", children: [_jsxs("div", { children: [_jsxs("div", { className: "mb-12 flex items-center gap-3 text-indigo-600 dark:text-indigo-400", children: [_jsx(User, { className: "w-8 h-8" }), _jsx("h2", { className: "text-3xl font-bold", children: "About Me" })] }), _jsx(Card, { className: "p-8 bg-white/50 backdrop-blur-sm dark:bg-white/5", children: _jsx("p", { className: "text-lg leading-relaxed text-muted-foreground", children: "I'm a college senior, business owner, and aspiring computer scientist based in Colorado Springs. Currently, I work as a Systems Developer at Colorado Homeschool Enrichment, where I develop scalable, automated systems using AWS, Airtable, and Python. I am passionate about learning, problem-solving, and advancing in the tech industry, particularly in software development, AI, and aerospace." }) })] }), _jsxs("div", { className: "relative group", children: [_jsx("div", { className: "absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000" }), _jsx("div", { className: "relative aspect-[3/4] rounded-lg overflow-hidden", children: _jsx("img", { src: profileImage, alt: "Joshua Edwards", className: "w-full h-full object-cover" }) })] })] }) }) }) }));
+}

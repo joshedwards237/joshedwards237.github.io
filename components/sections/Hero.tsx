@@ -1,4 +1,4 @@
-import { Github, Mail, Linkedin, Sparkles, ChevronDown } from 'lucide-react';
+import { Github, Mail, Linkedin, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { AnimatedButton } from '../AnimatedButton';
 
@@ -16,12 +16,11 @@ export function Hero({ onScrollToExperience }: HeroProps) {
         className="relative z-10"
       >
         <div className="flex items-center justify-center mb-6">
-          <Sparkles className="w-12 h-12 text-indigo-500 mr-4" />
           <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600">
             Joshua Edwards
           </h1>
         </div>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8">Software Developer & Entrepreneur</p>
+        <p className="text-xl md:text-2xl text-muted-foreground mb-8">Software Developer</p>
         
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <AnimatedButton href="https://github.com/joshedwards237" external>
