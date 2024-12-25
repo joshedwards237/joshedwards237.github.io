@@ -8,11 +8,10 @@ import { Experience } from '@/components/sections/Experience';
 import { Skills } from '@/components/sections/Skills';
 import { Education } from '@/components/sections/Education';
 import { Footer } from '@/components/Footer';
-import { StickySparkle } from '@/components/StickySparkle';
 export default function App() {
     const experienceRef = useRef(null);
     const scrollToExperience = () => {
         experienceRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
-    return (_jsxs("div", { className: "relative min-h-screen", children: [_jsx(motion.div, { className: "fixed inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-indigo-950 dark:via-neutral-900 dark:to-purple-950 -z-10" }), _jsx(StickySparkle, {}), _jsx(Hero, { onScrollToExperience: scrollToExperience }), _jsx(About, {}), _jsx(Projects, {}), _jsx(Experience, { experienceRef: experienceRef }), _jsx(Skills, {}), _jsx(Education, {}), _jsx(Footer, {})] }));
+    return (_jsxs("div", { className: "relative min-h-screen", children: [_jsx(motion.div, { className: "fixed inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-indigo-950 dark:via-neutral-900 dark:to-purple-950 -z-10" }), _jsx(Hero, { onScrollToExperience: scrollToExperience }), _jsx(About, {}), _jsx(Projects, {}), _jsx(Experience, { experienceRef: experienceRef }), _jsx(Skills, {}), _jsx(Education, {}), _jsx(Footer, {})] }));
 }
