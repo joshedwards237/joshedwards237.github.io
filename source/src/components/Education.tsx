@@ -23,7 +23,7 @@ export default function Education() {
                   December 2025
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                  <li>Graduated December 2025 with a 4.0 GPA</li>
+                  <li>Graduated December 2025 with a 3.9 GPA</li>
                   <li>ABET-accredited Computer Science program</li>
                   <li>
                     Advanced coursework in software and algorithm design,

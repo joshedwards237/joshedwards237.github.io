@@ -21,7 +21,7 @@ export default function About() {
                   security work, and running our PostgreSQL/RDS data platform
                   &mdash; while mentoring the engineers building alongside me. I
                   earned my B.S. in Computer Science from UCCS in December 2025,
-                  carrying a 4.0 while doing all of the above.
+                  carrying a 3.9 while doing all of the above.
                   <br />
                   <br />
                   I&rsquo;ve been leading teams since before I could drive: at 14
