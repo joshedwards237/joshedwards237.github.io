@@ -1,68 +1,11 @@
-import { ArrowUpRight, FlaskConical } from "lucide-react";
+import { ArrowUpRight, FlaskConical, History } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import ScrollAnimationWrapper from "@/components/ScrollAnimationWrapper";
+import { badgeStyles, entryKey, formatDate, getUpdates } from "@/lib/updates";
 
-const UPDATE_TYPES = ["shipped", "research", "changelog"] as const;
-type UpdateType = (typeof UPDATE_TYPES)[number];
-
-export interface TimelineEntry {
-  /** ISO date, YYYY-MM-DD */
-  date: string;
-  type: UpdateType;
-  title: string;
-  summary: string;
-  link?: string;
-  linkLabel?: string;
-}
-
-const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
-
-function isTimelineEntry(value: unknown): value is TimelineEntry {
-  if (typeof value !== "object" || value === null) return false;
-  const entry = value as Record<string, unknown>;
-  return (
-    typeof entry.date === "string" &&
-    DATE_PATTERN.test(entry.date) &&
-    typeof entry.type === "string" &&
-    (UPDATE_TYPES as readonly string[]).includes(entry.type) &&
-    typeof entry.title === "string" &&
-    entry.title.length > 0 &&
-    typeof entry.summary === "string" &&
-    entry.summary.length > 0 &&
-    (entry.link === undefined || typeof entry.link === "string") &&
-    (entry.linkLabel === undefined || typeof entry.linkLabel === "string")
-  );
-}
-
-const badgeStyles: Record<UpdateType, string> = {
-  shipped:
-    "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400",
-  research:
-    "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400",
-  changelog:
-    "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",
-};
-
-// Eagerly import every JSON entry in src/content/updates/. Each module's
-// default export is the parsed JSON object. Entries that fail the runtime
-// guard are skipped (the prebuild validator should catch them first).
-const modules = import.meta.glob("../content/updates/*.json", {
-  eager: true,
-}) as Record<string, { default: unknown }>;
-
-const entries: TimelineEntry[] = Object.values(modules)
-  .map((mod) => mod.default)
-  .filter(isTimelineEntry)
-  .sort((a, b) => b.date.localeCompare(a.date));
-
-function formatDate(isoDate: string): string {
-  const [year, month, day] = isoDate.split("-").map(Number);
-  return new Date(year, month - 1, day).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
+// Homepage teaser: only the latest three entries. The full history lives on
+// the Skills Timeline page (#/timeline).
+const entries = getUpdates().slice(0, 3);
 
 export default function Timeline() {
   if (entries.length === 0) return null;
@@ -84,7 +27,7 @@ export default function Timeline() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {entries.map((entry, index) => (
               <Card
-                key={`${entry.date}-${entry.title}`}
+                key={entryKey(entry)}
                 className={`p-6 hover:shadow-lg transition-all duration-300 bg-white/50 backdrop-blur-sm dark:bg-white/5 flex flex-col gap-3 ${
                   index === 0 ? "md:col-span-2" : ""
                 }`}
@@ -118,6 +61,15 @@ export default function Timeline() {
                 )}
               </Card>
             ))}
+          </div>
+          <div className="mt-12 flex justify-center">
+            <a
+              href="#/timeline"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <History className="w-5 h-5" />
+              Enter the Skills Timeline
+            </a>
           </div>
         </div>
       </ScrollAnimationWrapper>
