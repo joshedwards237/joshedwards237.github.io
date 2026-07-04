@@ -42,9 +42,15 @@ if (existsSync(rootAssets)) {
   mkdirSync(rootAssets, { recursive: true });
 }
 
-// 2. Copy the built index.html to the repo root.
-copyFileSync(path.join(distDir, "index.html"), path.join(repoRoot, "index.html"));
-console.log("copied   index.html");
+// 2. Copy every top-level file in dist/ to the repo root (index.html plus
+//    anything from source/public/ like favicon.svg).
+for (const name of readdirSync(distDir)) {
+  const src = path.join(distDir, name);
+  if (statSync(src).isFile()) {
+    copyFileSync(src, path.join(repoRoot, name));
+    console.log(`copied   ${name}`);
+  }
+}
 
 // 3. Copy all built assets to the root assets folder.
 if (existsSync(distAssets)) {
