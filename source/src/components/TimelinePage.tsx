@@ -228,7 +228,7 @@ export default function TimelinePage() {
       {/* Top bar */}
       <header className="relative z-10 px-6 pt-6 pb-2 flex flex-col items-center gap-2 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center">
         <a
-          href="#/"
+          href="#lab-notes"
           className="self-start md:self-auto md:justify-self-start inline-flex items-center gap-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />

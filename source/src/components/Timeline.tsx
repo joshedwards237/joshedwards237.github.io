@@ -3,15 +3,15 @@ import { Card } from "@/components/ui/card";
 import ScrollAnimationWrapper from "@/components/ScrollAnimationWrapper";
 import { badgeStyles, entryKey, formatDate, getUpdates } from "@/lib/updates";
 
-// Homepage teaser: only the latest three entries. The full history lives on
-// the Skills Timeline page (#/timeline).
-const entries = getUpdates().slice(0, 3);
+// Homepage teaser: only the latest two entries (one bento row: wide + normal).
+// The full history lives on the Skills Timeline page (#/timeline).
+const entries = getUpdates().slice(0, 2);
 
 export default function Timeline() {
   if (entries.length === 0) return null;
 
   return (
-    <section className="py-20 px-8">
+    <section id="lab-notes" className="py-20 px-8 scroll-mt-4">
       <ScrollAnimationWrapper>
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
