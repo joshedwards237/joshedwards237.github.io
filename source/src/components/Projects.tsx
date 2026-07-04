@@ -11,6 +11,14 @@ interface FlagshipProject {
   linkUrl: string;
   imageUrl: string;
   imageAlt: string;
+  /* Brand theming sampled from each product's own homepage */
+  theme: {
+    cardBg: string;
+    titleClass: string;
+    bodyClass: string;
+    badgeClass?: string;
+    buttonClass: string;
+  };
 }
 
 interface SmallProject {
@@ -31,6 +39,15 @@ const flagshipProjects: FlagshipProject[] = [
     linkUrl: "https://glyde-run.web.app/",
     imageUrl: glydeScreenshot,
     imageAlt: "Glyde homepage — training that reads your blood sugar, with a run-detail glucose overlay",
+    theme: {
+      cardBg: "bg-[#141c26]",
+      titleClass: "text-white",
+      bodyClass: "text-slate-300",
+      badgeClass:
+        "bg-emerald-400/10 border border-emerald-400/30 text-emerald-300",
+      buttonClass:
+        "rounded-full bg-emerald-400 text-[#132128] font-semibold hover:bg-emerald-300",
+    },
   },
   {
     title: "Skripl",
@@ -40,6 +57,13 @@ const flagshipProjects: FlagshipProject[] = [
     linkUrl: "https://skripl.co/",
     imageUrl: skriplScreenshot,
     imageAlt: "Skripl homepage — what you say and what you see, finally in the same place",
+    theme: {
+      cardBg: "bg-[#faf6ef]",
+      titleClass: "text-[#465462]",
+      bodyClass: "text-[#5b6672]",
+      buttonClass:
+        "rounded-full bg-[#c45f3a] text-white font-semibold hover:bg-[#b04f2d]",
+    },
   },
 ];
 
@@ -81,27 +105,35 @@ export default function Projects() {
             {flagshipProjects.map((project) => (
               <div className="relative group" key={project.title}>
                 <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000" />
-                <div className="relative bg-white dark:bg-gray-900 rounded-lg p-6">
+                <div className={`relative ${project.theme.cardBg} rounded-lg p-6`}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="space-y-4">
                       <div className="flex flex-wrap items-center gap-3">
-                        <h3 className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                        <h3
+                          className={`text-2xl font-bold ${project.theme.titleClass}`}
+                        >
                           {project.title}
                         </h3>
                         {project.badge && (
-                          <span className="inline-block px-3 py-1 bg-indigo-500/10 border border-indigo-500/20 rounded-full text-indigo-700 dark:text-indigo-400 text-sm font-medium">
+                          <span
+                            className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
+                              project.theme.badgeClass ?? ""
+                            }`}
+                          >
                             {project.badge}
                           </span>
                         )}
                       </div>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p
+                        className={`leading-relaxed ${project.theme.bodyClass}`}
+                      >
                         {project.description}
                       </p>
                       <a
                         href={project.linkUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-md font-medium hover:opacity-90 transition-opacity"
+                        className={`inline-block px-6 py-2 transition-colors ${project.theme.buttonClass}`}
                       >
                         {project.linkLabel}
                       </a>
@@ -140,7 +172,7 @@ export default function Projects() {
                       href={project.linkUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block self-start bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-1.5 rounded text-sm font-medium hover:opacity-90 transition-opacity"
+                      className="inline-block self-start bg-white border border-indigo-600 text-indigo-600 px-4 py-1.5 rounded text-sm font-medium hover:bg-indigo-50 transition-colors"
                     >
                       {project.linkLabel}
                     </a>

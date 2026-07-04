@@ -1,0 +1,6 @@
+{
+  "date": "2026-07-02",
+  "type": "changelog",
+  "title": "Enrollment system: hundreds of issues in, still shipping daily",
+  "summary": "Leading development on CHE's enrollment platform: staged rollouts behind build flags, a staging-to-production release pipeline, a per-PR QA verification loop, and conventional-commit automation that writes the release notes itself."
+}

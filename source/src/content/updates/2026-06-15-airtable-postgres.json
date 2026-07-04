@@ -1,0 +1,6 @@
+{
+  "date": "2026-06-15",
+  "type": "research",
+  "title": "Airtable to PostgreSQL on AWS RDS",
+  "summary": "Designing the migration of school operations data out of Airtable into a normalized PostgreSQL schema on AWS RDS — 3NF modeling, link tables for multi-select fields, and clean API boundaries between systems."
+}

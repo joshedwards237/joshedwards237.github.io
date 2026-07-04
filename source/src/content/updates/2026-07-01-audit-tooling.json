@@ -1,0 +1,6 @@
+{
+  "date": "2026-07-01",
+  "type": "changelog",
+  "title": "Built tooling for the state audit response",
+  "summary": "Supporting CHE's Colorado Department of Education audit response with tooling that detects attendance overlaps and double-counted time across class schedules — turning a manual compliance scramble into a repeatable process."
+}

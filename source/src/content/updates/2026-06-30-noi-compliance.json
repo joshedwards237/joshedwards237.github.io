@@ -1,0 +1,6 @@
+{
+  "date": "2026-06-30",
+  "type": "shipped",
+  "title": "Shipped NOI compliance in the enrollment system",
+  "summary": "New Colorado legislation required collecting a homeschooling Notice of Intent from every enrolling family for 26-27. Designed and shipped the signing, upload, re-sign, and admin-review flows on a legislative deadline."
+}
