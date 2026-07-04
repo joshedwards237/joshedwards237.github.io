@@ -71,8 +71,8 @@ export default function Skills() {
                 Languages
               </h3>
               <p className="text-muted-foreground">
-                Python, Java, HTML/CSS, JavaScript, TypeScript, C#, C++, C, SQL,
-                Bash, Assembly
+                Python, Swift, Java, HTML/CSS, JavaScript, TypeScript, C#, C++,
+                C, SQL, Bash, Assembly
               </p>
             </Card>
             <Card className="p-6 hover:shadow-lg transition-all duration-300 bg-white/50 backdrop-blur-sm dark:bg-white/5">
@@ -81,8 +81,8 @@ export default function Skills() {
                 Frameworks &amp; Tools
               </h3>
               <p className="text-muted-foreground">
-                Django, React, Node.js, AWS, PostgreSQL, AWS RDS, Git, GitHub,
-                Unity, Microsoft 365, Azure, Airtable, Replit
+                Django, React, SwiftUI, Node.js, AWS, PostgreSQL, AWS RDS, Git,
+                GitHub, Unity, Microsoft 365, Azure, Airtable, Replit
               </p>
             </Card>
             <Card className="p-6 hover:shadow-lg transition-all duration-300 bg-white/50 backdrop-blur-sm dark:bg-white/5">

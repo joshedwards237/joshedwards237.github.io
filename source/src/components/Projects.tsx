@@ -1,5 +1,7 @@
 import { ArrowUpRight, BookOpen } from "lucide-react";
 import ScrollAnimationWrapper from "@/components/ScrollAnimationWrapper";
+import glydeScreenshot from "@/assets/glyde.png";
+import skriplScreenshot from "@/assets/skripl.png";
 
 interface FlagshipProject {
   title: string;
@@ -7,6 +9,8 @@ interface FlagshipProject {
   description: string;
   linkLabel: string;
   linkUrl: string;
+  imageUrl: string;
+  imageAlt: string;
 }
 
 interface SmallProject {
@@ -25,6 +29,8 @@ const flagshipProjects: FlagshipProject[] = [
       "Training that reads your blood sugar. A running coach for Type 1 diabetics that overlays CGM data on pace and heart rate, builds adaptive VDOT training plans, and runs personalized glucose and heart-rate forecasts on-device with Core ML. Integrates Apple Health, Dexcom, Strava, and Tandem — with one hard rule: it never recommends insulin doses.",
     linkLabel: "Visit Glyde",
     linkUrl: "https://glyde-run.web.app/",
+    imageUrl: glydeScreenshot,
+    imageAlt: "Glyde homepage — training that reads your blood sugar, with a run-detail glucose overlay",
   },
   {
     title: "Skripl",
@@ -32,6 +38,8 @@ const flagshipProjects: FlagshipProject[] = [
       "A meeting recorder built around visual context: capture screenshots and annotate your screen while recording, then turn the meeting summary into context-specific tasks pushed straight into your task-management system.",
     linkLabel: "Visit Skripl",
     linkUrl: "https://skripl.co/",
+    imageUrl: skriplScreenshot,
+    imageAlt: "Skripl homepage — what you say and what you see, finally in the same place",
   },
 ];
 
@@ -98,15 +106,19 @@ export default function Projects() {
                         {project.linkLabel}
                       </a>
                     </div>
-                    {/* Gradient monogram in place of a stock image */}
-                    <div className="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-700 flex items-center justify-center">
-                      <span
-                        aria-hidden="true"
-                        className="text-8xl font-bold text-white/90 select-none"
-                      >
-                        {project.title.charAt(0)}
-                      </span>
-                    </div>
+                    <a
+                      href={project.linkUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative aspect-video rounded-lg overflow-hidden block border border-black/5 dark:border-white/10"
+                    >
+                      <img
+                        src={project.imageUrl}
+                        alt={project.imageAlt}
+                        loading="lazy"
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
+                    </a>
                   </div>
                 </div>
               </div>
