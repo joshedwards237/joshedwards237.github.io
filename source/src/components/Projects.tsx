@@ -1,55 +1,65 @@
-import { BookOpen } from "lucide-react";
+import { ArrowUpRight, BookOpen } from "lucide-react";
 import ScrollAnimationWrapper from "@/components/ScrollAnimationWrapper";
 
-interface Project {
+interface FlagshipProject {
   title: string;
+  badge?: string;
   description: string;
-  imageUrl: string;
-  projectUrl: string;
-  isPrimary?: boolean;
-  inProgress?: boolean;
+  linkLabel: string;
+  linkUrl: string;
 }
 
-export default function Projects() {
-  const featuredProject: Project = {
+interface SmallProject {
+  title: string;
+  description: string;
+  linkLabel: string;
+  linkUrl: string;
+  note?: string;
+}
+
+const flagshipProjects: FlagshipProject[] = [
+  {
+    title: "Glyde",
+    badge: "iOS · TestFlight beta",
+    description:
+      "Training that reads your blood sugar. A running coach for Type 1 diabetics that overlays CGM data on pace and heart rate, builds adaptive VDOT training plans, and runs personalized glucose and heart-rate forecasts on-device with Core ML. Integrates Apple Health, Dexcom, Strava, and Tandem — with one hard rule: it never recommends insulin doses.",
+    linkLabel: "Visit Glyde",
+    linkUrl: "https://glyde-run.web.app/",
+  },
+  {
+    title: "Skripl",
+    description:
+      "A meeting recorder built around visual context: capture screenshots and annotate your screen while recording, then turn the meeting summary into context-specific tasks pushed straight into your task-management system.",
+    linkLabel: "Visit Skripl",
+    linkUrl: "https://skripl.co/",
+  },
+];
+
+const smallProjects: SmallProject[] = [
+  {
     title: "Teacher Attendance Portal",
     description:
-      "Developed a streamlined web portal that revolutionizes how teachers record attendance. Built with Python and HTML/CSS, integrated with Airtable and AWS, features real-time updates, intuitive class management, automated reporting, and all wrapped in a sleek UI. The system significantly reduces the time spent on attendance, allowing teachers to focus more on instruction.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&q=80&w=800&h=600",
-    projectUrl: "https://github.com/joshedwards237",
-    isPrimary: true,
-  };
-
-  const inProgressProject: Project = {
-    title: "NeoPad - Live Performance Pad Software",
+      "A web portal that streamlines how teachers record attendance — built with Python and HTML/CSS on Airtable and AWS, with real-time updates, class management, and automated reporting. In production at Colorado Homeschool Enrichment, where it runs school-wide.",
+    linkLabel: "View Project",
+    linkUrl: "https://github.com/joshedwards237",
+  },
+  {
+    title: "NeoPad",
     description:
-      "Currently developing a Windows-based application that serves as an intuitive pad software for musicians during live performances. Built with modern UI/UX principles, it bridges the gap between beginner and professional needs with features like customizable pad layouts, real-time effects processing, and seamless audio routing. The focus is on creating a clear, easy-to-use interface while maintaining powerful functionality for live music enhancement.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=800&h=600",
-    projectUrl: "https://github.com/joshedwards237/NeoPad",
-    inProgress: true,
-  };
+      "A Windows pad software for musicians during live performances, bridging beginner and professional needs with customizable pad layouts, real-time effects processing, and seamless audio routing. Built with modern UI/UX principles for a clear, easy-to-use interface.",
+    linkLabel: "View Project",
+    linkUrl: "https://github.com/joshedwards237/NeoPad",
+  },
+  {
+    title: "cadence-bpm",
+    description:
+      "A small script that pairs the Spotify API with a verified-BPM database to build playlists from your liked songs within a target BPM range — cadence-locked running music.",
+    linkLabel: "View Project",
+    linkUrl: "https://github.com/joshedwards237/cadence-bpm",
+  },
+];
 
-  const otherProjects: Project[] = [
-    {
-      title: "Django Web Application",
-      description:
-        "Developed a full-stack Django web app with SQL database integration, advanced login functionality, and role-based permissions",
-      imageUrl:
-        "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800&h=600",
-      projectUrl: "https://github.com/joshedwards237",
-    },
-    {
-      title: "Matrix Calculator",
-      description:
-        "Created a Python-based matrix calculator with advanced mathematical operations including multiplication and vector products",
-      imageUrl:
-        "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=800&h=600",
-      projectUrl: "https://github.com",
-    },
-  ];
-
+export default function Projects() {
   return (
     <section className="py-20 px-8">
       <ScrollAnimationWrapper>
@@ -59,114 +69,85 @@ export default function Projects() {
             Projects
           </h2>
           <div className="space-y-12">
-            {/* Featured project */}
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000" />
-              <div className="relative bg-white dark:bg-gray-900 rounded-lg p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="space-y-4">
-                    <h3 className="text-2xl font-bold text-purple-600 dark:text-purple-400">
-                      {featuredProject.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {featuredProject.description}
-                    </p>
-                    <a
-                      href={featuredProject.projectUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-md font-medium hover:opacity-90 transition-opacity"
-                    >
-                      View Project
-                    </a>
-                  </div>
-                  <div className="relative aspect-video rounded-lg overflow-hidden">
-                    <img
-                      src={featuredProject.imageUrl}
-                      alt={featuredProject.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* In-development project */}
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-lg blur opacity-30 group-hover:opacity-80 transition duration-1000" />
-              <div className="relative bg-white dark:bg-gray-800 rounded-lg p-6 border border-yellow-400/30">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  <div className="space-y-4">
-                    <h3 className="text-2xl font-bold text-yellow-500 dark:text-yellow-400 flex items-center gap-2">
-                      {inProgressProject.title}
-                    </h3>
-                    <div className="inline-block px-3 py-1 bg-yellow-500/10 border border-yellow-500/20 rounded-full text-yellow-700 dark:text-yellow-400 text-sm font-medium">
-                      In Development
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {inProgressProject.description}
-                    </p>
-                    <a
-                      href={inProgressProject.projectUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-6 py-2 rounded-md font-medium hover:opacity-90 transition-opacity"
-                    >
-                      View Progress
-                    </a>
-                  </div>
-                  <div className="relative aspect-video rounded-lg overflow-hidden opacity-90">
-                    <img
-                      src={inProgressProject.imageUrl}
-                      alt={inProgressProject.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Other projects */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {otherProjects.map((project) => (
-                <div className="relative group" key={project.title}>
-                  <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg blur opacity-20 group-hover:opacity-60 transition duration-1000" />
-                  <div className="relative bg-white dark:bg-gray-900 rounded-lg p-4">
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <div className="flex-1 space-y-3">
-                        <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">
+            {/* Flagship projects */}
+            {flagshipProjects.map((project) => (
+              <div className="relative group" key={project.title}>
+                <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000" />
+                <div className="relative bg-white dark:bg-gray-900 rounded-lg p-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div className="space-y-4">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <h3 className="text-2xl font-bold text-purple-600 dark:text-purple-400">
                           {project.title}
                         </h3>
-                        <div className="block sm:hidden w-full h-32 rounded-lg overflow-hidden">
-                          <img
-                            src={project.imageUrl}
-                            alt={project.title}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <p className="text-muted-foreground leading-relaxed text-sm">
-                          {project.description}
-                        </p>
-                        <a
-                          href={project.projectUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-block bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-1.5 rounded text-sm font-medium hover:opacity-90 transition-opacity"
-                        >
-                          View Project
-                        </a>
+                        {project.badge && (
+                          <span className="inline-block px-3 py-1 bg-indigo-500/10 border border-indigo-500/20 rounded-full text-indigo-700 dark:text-indigo-400 text-sm font-medium">
+                            {project.badge}
+                          </span>
+                        )}
                       </div>
-                      <div className="hidden sm:block w-40 h-32 flex-shrink-0 rounded-lg overflow-hidden">
-                        <img
-                          src={project.imageUrl}
-                          alt={project.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {project.description}
+                      </p>
+                      <a
+                        href={project.linkUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-md font-medium hover:opacity-90 transition-opacity"
+                      >
+                        {project.linkLabel}
+                      </a>
                     </div>
+                    {/* Gradient monogram in place of a stock image */}
+                    <div className="relative aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-700 flex items-center justify-center">
+                      <span
+                        aria-hidden="true"
+                        className="text-8xl font-bold text-white/90 select-none"
+                      >
+                        {project.title.charAt(0)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* Smaller projects */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {smallProjects.map((project) => (
+                <div className="relative group" key={project.title}>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg blur opacity-20 group-hover:opacity-60 transition duration-1000" />
+                  <div className="relative bg-white dark:bg-gray-900 rounded-lg p-5 h-full flex flex-col gap-3">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm flex-1">
+                      {project.description}
+                    </p>
+                    <a
+                      href={project.linkUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block self-start bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-1.5 rounded text-sm font-medium hover:opacity-90 transition-opacity"
+                    >
+                      {project.linkLabel}
+                    </a>
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Trailing GitHub link */}
+            <div className="text-center">
+              <a
+                href="https://github.com/joshedwards237"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+              >
+                More on GitHub
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>

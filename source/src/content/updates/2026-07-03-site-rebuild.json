@@ -1,0 +1,6 @@
+{
+  "date": "2026-07-03",
+  "type": "changelog",
+  "title": "Rebuilt this site from source — with a zero-click pipeline",
+  "summary": "The original source was lost, so I reconstructed the full React/TypeScript project from the production bundle, then wired push-to-main auto-deploys. This section is the foundation for a scheduled agent that will keep the site alive on its own."
+}

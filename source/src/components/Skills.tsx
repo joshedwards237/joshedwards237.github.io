@@ -39,7 +39,7 @@ export default function Skills() {
                       <br />
                       This is a core part of what drives me, and I'm always
                       excited for new ways to learn and grow! If I am given a
-                      talk that requires a skill I don't currently possess, I
+                      task that requires a skill I don't currently possess, I
                       will jump right in and learn it.
                       <br />
                       <br />
@@ -81,8 +81,8 @@ export default function Skills() {
                 Frameworks &amp; Tools
               </h3>
               <p className="text-muted-foreground">
-                Django, React, Node.js, AWS, Git, GitHub, Unity, Microsoft 365,
-                Azure, Airtable, Replit
+                Django, React, Node.js, AWS, PostgreSQL, AWS RDS, Git, GitHub,
+                Unity, Microsoft 365, Azure, Airtable, Replit
               </p>
             </Card>
             <Card className="p-6 hover:shadow-lg transition-all duration-300 bg-white/50 backdrop-blur-sm dark:bg-white/5">
@@ -91,9 +91,9 @@ export default function Skills() {
                 Expertise
               </h3>
               <p className="text-muted-foreground">
-                Full Stack Development, Systems Integration, Cloud Computing,
-                Agile Methodology, Version Control, API Development, AI, UI/UX
-                Design, and more
+                Full-Stack Development, Team Leadership, DevOps &amp; CI/CD,
+                Cloud Computing, PostgreSQL &amp; AWS RDS, Security, Systems
+                Integration, API Development, AI, UI/UX Design
               </p>
             </Card>
           </div>

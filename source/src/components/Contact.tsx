@@ -7,8 +7,11 @@ export default function Contact() {
       <div className="max-w-5xl mx-auto space-y-8">
         <div className="flex flex-col items-center gap-4">
           <h3 className="text-2xl font-semibold text-indigo-600 dark:text-indigo-400">
-            Let's Connect!
+            Let's Connect
           </h3>
+          <p className="text-muted-foreground">
+            Hiring for a team lead, or want to talk systems? Book 30 minutes.
+          </p>
           <SocialButton
             href="https://calendly.com/blackbeltjje/30min"
             external
