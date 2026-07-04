@@ -22,8 +22,12 @@ export default function Hero({ onScrollToExperience }: HeroProps) {
             Joshua Edwards
           </h1>
         </div>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-          Software Developer
+        <p className="text-xl md:text-2xl text-muted-foreground mb-4">
+          Systems Engineer &middot; Tech Team Lead
+        </p>
+        <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+          I build and run the systems a school depends on &mdash; full-stack
+          apps, AWS infrastructure, and the team that ships them.
         </p>
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <SocialButton href="https://github.com/joshedwards237" external>

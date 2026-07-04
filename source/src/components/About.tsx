@@ -16,21 +16,20 @@ export default function About() {
               </div>
               <Card className="p-8 bg-white/50 backdrop-blur-sm dark:bg-white/5">
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  As a college senior, entrepreneur, and computer scientist based
-                  in Colorado Springs, I bring a unique combination of technical
-                  expertise and innovative thinking. In my current role as a
-                  Systems Developer at Colorado Homeschool Enrichment, I design
-                  and implement scalable, automated systems using AWS, Airtable,
-                  and Python to streamline operations and drive efficiency.
+                  I lead the tech team at Colorado Homeschool Enrichment, where
+                  the last year has meant full-stack development, DevOps,
+                  security work, and running our PostgreSQL/RDS data platform
+                  &mdash; while mentoring the engineers building alongside me. I
+                  earned my B.S. in Computer Science from UCCS in December 2025,
+                  carrying a 3.9 while doing all of the above.
                   <br />
                   <br />
-                  My passion for learning and problem-solving means I’m always
-                  looking for new ways to create value, and I’m deeply motivated
-                  to contribute to cutting-edge advancements in software
-                  development, AI, and aerospace. If your team is looking for
-                  someone who can tackle complex challenges, think strategically,
-                  and deliver impactful solutions, I’d love to help you reach
-                  your next milestone.
+                  I&rsquo;ve been leading teams since before I could drive: at 14
+                  I started a yard-work business that grew to 50 households and
+                  two employees. That same bias for ownership shows up in
+                  everything I ship &mdash; from the attendance system my school
+                  runs on to a glucose-aware running coach. Off the clock: black
+                  belt, pad controllers and live music, and Colorado trails.
                 </p>
               </Card>
             </div>

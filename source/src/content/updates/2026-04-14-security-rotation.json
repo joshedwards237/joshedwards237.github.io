@@ -1,0 +1,6 @@
+{
+  "date": "2026-04-14",
+  "type": "changelog",
+  "title": "Security hygiene: org-wide credential rotation",
+  "summary": "Responded to an upstream vendor advisory by auditing webhook integrations across the school's repositories and rotating affected secrets — part of owning security posture end to end."
+}

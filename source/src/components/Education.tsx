@@ -19,16 +19,15 @@ export default function Education() {
                   University of Colorado Colorado Springs
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  Bachelor's in Computer Science • August 2023 - Current
+                  Bachelor of Science in Computer Science • August 2023 –
+                  December 2025
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                  <li>Pursuing ABET Accredited Computer Science Degree</li>
-                  <li>Current GPA: 4.0</li>
-                  <li>Expected Graduation: December 2025</li>
+                  <li>Graduated December 2025 with a 3.9 GPA</li>
+                  <li>ABET-accredited Computer Science program</li>
                   <li>
                     Advanced coursework in software and algorithm design,
-                    customer relations and management, calculus, linear algebra,
-                    physics, and computer science
+                    calculus, linear algebra, physics, and computer science
                   </li>
                 </ul>
               </Card>

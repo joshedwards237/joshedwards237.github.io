@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/validate-content.mjs",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "publish:root": "npm run build && node scripts/publish.mjs"

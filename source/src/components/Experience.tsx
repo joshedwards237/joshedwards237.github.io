@@ -21,27 +21,28 @@ export default function Experience({ experienceRef }: ExperienceProps) {
               <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg blur opacity-25" />
               <Card className="relative p-8 transition-all duration-300 bg-white dark:bg-gray-900">
                 <h3 className="text-xl font-bold mb-2 text-purple-600 dark:text-purple-400">
-                  Systems Developer
+                  Systems Engineer &amp; Tech Team Lead
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  Colorado Homeschool Enrichment • April 2024 - Present
+                  Colorado Homeschool Enrichment • April 2024 – Present
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground space-y-2">
                   <li>
-                    Designed and implemented scalable solutions using AWS,
-                    Airtable, Python scripts, and webhooks
+                    Lead the tech team — planning, code review, mentoring, and
+                    delivery across web, data, and infrastructure
                   </li>
                   <li>
-                    Developed and maintained critical websites and automation
-                    processes
+                    Design and operate full-stack systems on AWS backed by
+                    RDS/PostgreSQL, supporting school-wide operations
                   </li>
                   <li>
-                    Integrated cloud-based systems and optimized data workflows
-                    with custom Python scripts
+                    Own security posture: access control, hardening, and safe
+                    handling of student data
                   </li>
                   <li>
-                    Enhanced system reliability and performance through AWS
-                    services
+                    Built Python/Airtable/AWS automation that eliminated hours
+                    of weekly manual work, including the attendance portal used
+                    school-wide
                   </li>
                 </ul>
               </Card>
