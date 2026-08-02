@@ -61,21 +61,18 @@ export function entryKey(entry: TimelineEntry): string {
   return `${entry.date}-${entry.title}`;
 }
 
-/** Badge (pill) classes per entry type — shared by Lab Notes + Timeline page. */
+/** Badge (pill) classes per entry type — palette-driven (Mono / Slate). */
 export const badgeStyles: Record<UpdateType, string> = {
-  shipped:
-    "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400",
-  research:
-    "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400",
-  changelog:
-    "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",
+  shipped: "border border-edge bg-surface text-brand",
+  research: "border border-edge bg-surface text-ink",
+  changelog: "border border-edge bg-surface text-subtle",
 };
 
 /** Spine-dot classes per entry type (Skills Timeline page). */
 export const dotStyles: Record<UpdateType, string> = {
-  shipped: "bg-emerald-500",
-  research: "bg-indigo-500",
-  changelog: "bg-amber-500",
+  shipped: "bg-brand",
+  research: "bg-ink",
+  changelog: "bg-subtle",
 };
 
 /** Parse a YYYY-MM-DD string as a local date (avoids UTC off-by-one). */

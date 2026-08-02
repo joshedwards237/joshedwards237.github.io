@@ -4,7 +4,46 @@ export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        serif: [
+          '"Iowan Old Style"',
+          '"Palatino Linotype"',
+          "Palatino",
+          "Georgia",
+          '"Times New Roman"',
+          "serif",
+        ],
+        mono: [
+          "ui-monospace",
+          '"SF Mono"',
+          '"JetBrains Mono"',
+          '"Cascadia Code"',
+          "Menlo",
+          "Consolas",
+          "monospace",
+        ],
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"Segoe UI"',
+          "Roboto",
+          "Helvetica",
+          "Arial",
+          "sans-serif",
+        ],
+      },
       colors: {
+        /* Field Notes tokens */
+        paper: "var(--fn-bg)",
+        surface: "var(--fn-surface)",
+        ink: "var(--fn-ink)",
+        subtle: "var(--fn-muted)",
+        body: "var(--fn-body)",
+        edge: "var(--fn-line)",
+        brand: "var(--fn-accent)",
+        brand2: "var(--fn-accent2)",
+        "on-brand": "var(--fn-on)",
+        /* shadcn tokens (retained) */
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

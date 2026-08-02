@@ -223,22 +223,22 @@ export default function TimelinePage() {
 
   return (
     <div className="relative min-h-screen h-screen flex flex-col overflow-hidden">
-      <div className="fixed inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-indigo-950 dark:via-neutral-900 dark:to-purple-950 -z-10" />
+      <div className="fixed inset-0 bg-paper -z-10" />
 
       {/* Top bar */}
       <header className="relative z-10 px-6 pt-6 pb-2 flex flex-col items-center gap-2 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center">
         <a
           href="#lab-notes"
-          className="self-start md:self-auto md:justify-self-start inline-flex items-center gap-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+          className="self-start md:self-auto md:justify-self-start inline-flex items-center gap-2 text-sm font-medium text-subtle hover:text-brand transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           Back
         </a>
         <div className="text-center">
-          <h1 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600">
+          <h1 className="font-serif text-3xl md:text-4xl font-semibold tracking-tight text-ink">
             Skills Timeline
           </h1>
-          <p className="mt-1 text-sm md:text-base text-muted-foreground">
+          <p className="mt-1 text-sm md:text-base text-subtle">
             Everything I've been building, learning, and shipping — drag to
             explore.
           </p>
@@ -253,7 +253,7 @@ export default function TimelinePage() {
         role="region"
         aria-label="Skills timeline — use arrow keys, mouse drag, or scroll to pan"
         onKeyDown={handleKeyDown}
-        className="relative flex-1 overflow-hidden cursor-grab active:cursor-grabbing outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/60"
+        className="relative flex-1 overflow-hidden cursor-grab active:cursor-grabbing outline-none focus-visible:ring-2 focus-visible:ring-brand/50"
       >
         <motion.div
           drag="x"
@@ -273,7 +273,7 @@ export default function TimelinePage() {
           className="relative h-full"
         >
           {/* Spine */}
-          <div className="absolute left-0 right-0 top-1/2 h-px bg-gradient-to-r from-indigo-300 via-purple-400 to-indigo-300 dark:from-indigo-700 dark:via-purple-500 dark:to-indigo-700" />
+          <div className="absolute left-0 right-0 top-1/2 h-px bg-edge" />
 
           {/* Month/year ticks */}
           {ticks.map((tick) => (
@@ -282,11 +282,11 @@ export default function TimelinePage() {
               className="absolute top-1/2 -translate-x-1/2 pointer-events-none"
               style={{ left: tick.x }}
             >
-              <div className="w-px h-2.5 bg-indigo-300 dark:bg-indigo-600 mx-auto" />
-              <div className="mt-1 text-[10px] leading-tight text-center whitespace-nowrap text-muted-foreground">
+              <div className="w-px h-2.5 bg-edge mx-auto" />
+              <div className="mt-1 text-[10px] leading-tight text-center whitespace-nowrap text-subtle">
                 {tick.monthLabel}
                 {tick.yearLabel && (
-                  <span className="ml-1 font-semibold text-indigo-500 dark:text-indigo-400">
+                  <span className="ml-1 font-semibold text-brand">
                     {tick.yearLabel}
                   </span>
                 )}
@@ -299,12 +299,12 @@ export default function TimelinePage() {
             <div key={item.key}>
               {/* Dot on the spine */}
               <div
-                className={`absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full ring-4 ring-white/70 dark:ring-neutral-900/70 ${dotStyles[item.entry.type]}`}
+                className={`absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full ring-4 ring-paper ${dotStyles[item.entry.type]}`}
                 style={{ left: item.x }}
               />
               {/* Connector from dot to card */}
               <div
-                className="absolute w-px bg-gradient-to-b from-indigo-300 to-purple-300 dark:from-indigo-700 dark:to-purple-700"
+                className="absolute w-px bg-edge"
                 style={{
                   left: item.x,
                   height: 36,
@@ -332,7 +332,7 @@ export default function TimelinePage() {
                   }}
                   role="button"
                   tabIndex={-1}
-                  className="rounded-xl border bg-white/70 dark:bg-white/5 backdrop-blur shadow hover:shadow-lg transition-shadow p-4 flex flex-col gap-2 cursor-pointer select-none"
+                  className="rounded-xl border border-edge bg-surface shadow-sm hover:shadow-md transition-shadow p-4 flex flex-col gap-2 cursor-pointer select-none"
                 >
                   <div className="flex items-center justify-between gap-2">
                     <span
@@ -340,17 +340,17 @@ export default function TimelinePage() {
                     >
                       {item.entry.type}
                     </span>
-                    <span className="text-xs text-muted-foreground whitespace-nowrap">
+                    <span className="text-xs text-subtle whitespace-nowrap">
                       {formatDate(item.entry.date)}
                     </span>
                   </div>
-                  <h3 className="text-sm font-bold leading-snug text-gray-900 dark:text-gray-100">
+                  <h3 className="text-sm font-bold leading-snug text-ink">
                     {item.entry.title}
                   </h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                  <p className="text-xs text-body leading-relaxed line-clamp-2">
                     {item.entry.summary}
                   </p>
-                  <span className="text-[11px] font-medium text-indigo-500 dark:text-indigo-400">
+                  <span className="text-[11px] font-medium text-brand">
                     Click to expand
                   </span>
                 </motion.div>
@@ -360,8 +360,8 @@ export default function TimelinePage() {
         </motion.div>
 
         {/* Edge fade affordances */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-indigo-50/90 dark:from-indigo-950/90 to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-purple-50/90 dark:from-purple-950/90 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-paper to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-paper to-transparent" />
       </div>
 
       {/* Detail overlay */}
@@ -380,7 +380,7 @@ export default function TimelinePage() {
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
               <motion.div
                 layoutId={selected.key}
-                className="pointer-events-auto w-full max-w-lg rounded-xl border bg-white/95 dark:bg-neutral-900/95 backdrop-blur shadow-2xl p-6 flex flex-col gap-3"
+                className="pointer-events-auto w-full max-w-lg rounded-xl border border-edge bg-surface shadow-2xl p-6 flex flex-col gap-3"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
@@ -389,22 +389,22 @@ export default function TimelinePage() {
                     >
                       {selected.entry.type}
                     </span>
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-sm text-subtle">
                       {formatDate(selected.entry.date)}
                     </span>
                   </div>
                   <button
                     onClick={closeDetail}
                     aria-label="Close details"
-                    className="p-1 rounded-full text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+                    className="p-1 rounded-full text-subtle hover:text-ink hover:bg-black/5 transition-colors"
                   >
                     <X className="w-5 h-5" />
                   </button>
                 </div>
-                <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">
+                <h2 className="text-xl font-bold text-ink">
                   {selected.entry.title}
                 </h2>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-body leading-relaxed">
                   {selected.entry.summary}
                 </p>
                 {selected.entry.link && (
@@ -412,7 +412,7 @@ export default function TimelinePage() {
                     href={selected.entry.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 inline-flex items-center gap-2 self-start bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2.5 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-shadow"
+                    className="mt-2 inline-flex items-center gap-2 self-start bg-brand text-on-brand px-6 py-2.5 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-shadow"
                   >
                     {selected.entry.linkLabel ?? "Learn more"}
                     <ArrowUpRight className="w-4 h-4" />

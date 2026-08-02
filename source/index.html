@@ -10,6 +10,13 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://joshuaedwards.me/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Apply the saved colour palette before first paint (no flash). -->
+    <script>
+      try {
+        if (localStorage.getItem("palette") === "slate")
+          document.documentElement.setAttribute("data-palette", "slate");
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

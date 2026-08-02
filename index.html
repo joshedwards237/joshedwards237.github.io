@@ -10,8 +10,15 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://joshuaedwards.me/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script type="module" crossorigin src="/assets/main.B-WHTbCs.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main.B6Jf1LtO.css">
+    <!-- Apply the saved colour palette before first paint (no flash). -->
+    <script>
+      try {
+        if (localStorage.getItem("palette") === "slate")
+          document.documentElement.setAttribute("data-palette", "slate");
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/assets/main.D7NGfQt9.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main.BJBLTlVE.css">
   </head>
   <body>
     <div id="root"></div>
