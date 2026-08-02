@@ -1,0 +1,6 @@
+{
+  "date": "2026-08-01",
+  "type": "research",
+  "title": "Jarvis: a local voice assistant you can interrupt",
+  "summary": "Building Jarvis, an on-device voice assistant with VAD push-to-wake and true barge-in — talk over it and it stops instantly, cancelling the model stream server-side so a cut-off turn stops generating."
+}
