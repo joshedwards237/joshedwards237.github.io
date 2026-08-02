@@ -1,0 +1,6 @@
+{
+  "date": "2026-07-21",
+  "type": "changelog",
+  "title": "CHE training platform: an AI-literacy engineering harness",
+  "summary": "Brought CHE's training platform onto a documented engineering harness — an agent team with model-routing rules and genuinely-enforced pre-commit gates (secret scanning and duplicate-content checks) that block bad commits before they land."
+}

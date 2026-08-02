@@ -1,0 +1,8 @@
+{
+  "date": "2026-08-01",
+  "type": "research",
+  "title": "Amanuensis: proving a fully-local dictation engine for macOS",
+  "summary": "Started Amanuensis, an open-source macOS dictation tool where no audio ever leaves the machine. The spec survived two adversarial review rounds, and the Phase 1 gate proved the on-device speech path at 300 ms p50 / 373 ms p95 — well inside a 400 ms budget.",
+  "link": "https://github.com/joshedwards237/Amanuensis",
+  "linkLabel": "View on GitHub"
+}
