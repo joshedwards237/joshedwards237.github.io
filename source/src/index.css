@@ -4,6 +4,19 @@
 
 @layer base {
   :root {
+    /* ---- Field Notes design tokens · Mono (default) ---- */
+    --fn-bg: #f4f4f2;
+    --fn-surface: #fbfbfa;
+    --fn-ink: #18181a;
+    --fn-muted: #7a7a7d;
+    --fn-body: #3c3c3e;
+    --fn-line: #e2e2de;
+    --fn-accent: #18181a;
+    --fn-accent2: #6a6a6d;
+    --fn-on: #ffffff;
+    --fn-spot: rgba(0, 0, 0, 0.045);
+
+    /* ---- shadcn tokens (retained for leftover ui/* primitives) ---- */
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -26,35 +39,36 @@
     --radius: 0.75rem;
   }
 
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+  /* ---- Field Notes · Slate (opt-in colour palette) ---- */
+  :root[data-palette="slate"] {
+    --fn-bg: #eaf0ee;
+    --fn-surface: #f5f8f6;
+    --fn-ink: #16201d;
+    --fn-muted: #617069;
+    --fn-body: #39443f;
+    --fn-line: #d3dcd8;
+    --fn-accent: #107d6e;
+    --fn-accent2: #a86e3a;
+    --fn-on: #ffffff;
+    --fn-spot: rgba(16, 125, 110, 0.10);
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-edge;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--fn-bg);
+    color: var(--fn-body);
+    font-family: theme(fontFamily.sans);
+    -webkit-font-smoothing: antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  /* Visible keyboard focus everywhere (competence signal + a11y). */
+  :focus-visible {
+    outline: 2px solid var(--fn-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }
