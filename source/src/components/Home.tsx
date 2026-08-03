@@ -1,5 +1,4 @@
 import { useEffect, useState, type ReactNode } from "react";
-import Logo from "@/components/Logo";
 import SocialIcons from "@/components/SocialIcons";
 import PaletteToggle from "@/components/PaletteToggle";
 import { formatDate, getUpdates } from "@/lib/updates";
@@ -285,9 +284,6 @@ export default function Home() {
       <div className="mx-auto grid max-w-[1140px] grid-cols-1 gap-0 px-6 md:grid-cols-[0.82fr_1.18fr]">
         {/* ---------- identity panel ---------- */}
         <aside className="flex flex-col border-edge py-14 md:sticky md:top-0 md:h-screen md:self-start md:border-r md:py-16 md:pr-10">
-          <a href="#" aria-label="Home" className="mb-8 inline-block text-ink">
-            <Logo className="h-10 w-10" />
-          </a>
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.12em] text-brand">
             Colorado · systems engineer
           </p>
@@ -317,6 +313,14 @@ export default function Home() {
                 className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-on-brand transition hover:brightness-110"
               >
                 See my work
+              </a>
+              <a
+                href="/joshua-edwards-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-edge px-5 py-2.5 text-sm font-medium text-ink transition hover:border-brand hover:text-brand"
+              >
+                Résumé
               </a>
               <a
                 href="https://calendly.com/blackbeltjje/30min"
@@ -428,6 +432,14 @@ export default function Home() {
               className="font-mono text-sm text-brand hover:underline"
             >
               joshua.edwards237@gmail.com
+            </a>
+            <a
+              href="/joshua-edwards-resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-sm text-subtle transition-colors hover:text-brand"
+            >
+              Résumé ↗
             </a>
             <a
               href="https://calendly.com/blackbeltjje/30min"
