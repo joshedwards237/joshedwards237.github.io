@@ -132,15 +132,15 @@ const roles: Role[] = [
 const stack: { k: string; t: string }[] = [
   {
     k: "Languages",
-    t: "Python · Swift · TypeScript · JavaScript · Java · C# · C++ · C · SQL · Bash",
+    t: "Swift · TypeScript · Python · SQL · PL/pgSQL · C# · C++ · JavaScript · Bash",
   },
   {
     k: "Platform & tools",
-    t: "AWS · PostgreSQL / RDS · React · SwiftUI · Django · Node.js · Git · Airtable · Azure · Microsoft 365",
+    t: "AWS · Google Cloud · PostgreSQL / RDS · React · SwiftUI · Node.js · Claude · AI · Git · Airtable · Microsoft 365",
   },
   {
     k: "Practices",
-    t: "Full-stack delivery · Team leadership · DevOps & CI/CD · Security · Systems integration · API design · UI/UX",
+    t: "Platform engineering · Team leadership · DevOps & CI/CD · Full-stack delivery · Security · Systems integration · API design · UI/UX",
   },
 ];
 
