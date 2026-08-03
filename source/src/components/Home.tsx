@@ -21,9 +21,12 @@ interface WorkItem {
 const work: WorkItem[] = [
   {
     name: "Glyde",
-    meta: "iOS · TestFlight",
-    dsc: "A running coach for Type 1 diabetics that overlays CGM data on pace and heart rate and builds adaptive VDOT training plans.",
-    links: [{ label: "glyde-run.web.app", href: "https://glyde-run.web.app/" }],
+    meta: "iOS · App Store",
+    dsc: "A running coach for Type 1 diabetics that overlays CGM data on pace and heart rate and builds adaptive VDOT training plans. Live on the App Store.",
+    links: [
+      { label: "App Store", href: "https://apps.apple.com/app/id6780709934" },
+      { label: "glyde-run.web.app", href: "https://glyde-run.web.app/" },
+    ],
     more: "Runs personalized glucose and heart-rate forecasts on-device with Core ML, and integrates Apple Health, Dexcom, Strava, and Tandem — with one hard rule: it never recommends insulin doses.",
     tech: "Swift · SwiftUI · Core ML · HealthKit",
   },
@@ -34,6 +37,14 @@ const work: WorkItem[] = [
     links: [{ label: "skripl.co", href: "https://skripl.co/" }],
     more: "Turns the meeting summary into context-specific tasks pushed straight into your task-management system, so what you saw and what you said stay connected.",
     tech: "TypeScript · React",
+  },
+  {
+    name: "CHE Enrollment Portal",
+    meta: "Web · team lead",
+    dsc: "The enrollment portal and enrollment flow for Colorado Homeschool Enrichment — where families enroll students in classes, and the platform the whole org runs on.",
+    links: [{ label: "enroll.che.school", href: "https://enroll.che.school" }],
+    more: "I lead its development: staged rollouts behind build flags, a staging→production release pipeline, per-PR QA verification, and conventional-commit automation that writes its own release notes — shipping daily to a system families depend on without breaking it.",
+    tech: "React · Node · PostgreSQL/RDS · AWS · CI/CD",
   },
   {
     name: "Teacher Attendance Portal",
@@ -303,7 +314,7 @@ export default function Home() {
           </p>
           <p className="mt-6 border-t border-edge pt-4 font-mono text-xs leading-relaxed text-subtle">
             <span className="font-medium text-brand">Now</span> — leading CHE's
-            tech team; <span className="text-ink">Glyde is in TestFlight beta.</span>
+            tech team; <span className="text-ink">Glyde just shipped to the App Store.</span>
           </p>
 
           <div className="mt-auto pt-8">
