@@ -148,7 +148,7 @@ const education: { name: string; meta: string; dsc: string }[] = [
   {
     name: "University of Colorado Colorado Springs",
     meta: "B.S. Computer Science · 2025",
-    dsc: "Graduated December 2025 with a 3.9 GPA from the ABET-accredited program. Coursework across software & algorithm design, calculus, linear algebra, and physics.",
+    dsc: "Graduated December 2025 with a 3.9 GPA from the ABET-accredited program. Coursework across software and algorithm design, advanced mathematics and physics, and systems development.",
   },
   {
     name: "Pikes Peak State College",
@@ -334,7 +334,7 @@ export default function Home() {
                 Résumé
               </a>
               <a
-                href="https://calendly.com/blackbeltjje/30min"
+                href="https://calendly.com/blackbeltjje/new-meeting"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-edge px-5 py-2.5 text-sm font-medium text-ink transition hover:border-brand hover:text-brand"
@@ -453,7 +453,7 @@ export default function Home() {
               Résumé ↗
             </a>
             <a
-              href="https://calendly.com/blackbeltjje/30min"
+              href="https://calendly.com/blackbeltjje/new-meeting"
               target="_blank"
               rel="noopener noreferrer"
               className="font-mono text-sm text-subtle transition-colors hover:text-brand"
