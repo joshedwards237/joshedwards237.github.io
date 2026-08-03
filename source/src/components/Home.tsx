@@ -1,5 +1,4 @@
 import { useEffect, useState, type ReactNode } from "react";
-import Logo from "@/components/Logo";
 import SocialIcons from "@/components/SocialIcons";
 import PaletteToggle from "@/components/PaletteToggle";
 import { formatDate, getUpdates } from "@/lib/updates";
@@ -22,9 +21,12 @@ interface WorkItem {
 const work: WorkItem[] = [
   {
     name: "Glyde",
-    meta: "iOS · TestFlight",
-    dsc: "A running coach for Type 1 diabetics that overlays CGM data on pace and heart rate and builds adaptive VDOT training plans.",
-    links: [{ label: "glyde-run.web.app", href: "https://glyde-run.web.app/" }],
+    meta: "iOS · App Store",
+    dsc: "A running coach for Type 1 diabetics that overlays CGM data on pace and heart rate and builds adaptive VDOT training plans. Live on the App Store.",
+    links: [
+      { label: "App Store", href: "https://apps.apple.com/app/id6780709934" },
+      { label: "glyde-run.web.app", href: "https://glyde-run.web.app/" },
+    ],
     more: "Runs personalized glucose and heart-rate forecasts on-device with Core ML, and integrates Apple Health, Dexcom, Strava, and Tandem — with one hard rule: it never recommends insulin doses.",
     tech: "Swift · SwiftUI · Core ML · HealthKit",
   },
@@ -35,6 +37,14 @@ const work: WorkItem[] = [
     links: [{ label: "skripl.co", href: "https://skripl.co/" }],
     more: "Turns the meeting summary into context-specific tasks pushed straight into your task-management system, so what you saw and what you said stay connected.",
     tech: "TypeScript · React",
+  },
+  {
+    name: "CHE Enrollment Portal",
+    meta: "Web · team lead",
+    dsc: "The enrollment portal and enrollment flow for Colorado Homeschool Enrichment — where families enroll students in classes, and the platform the whole org runs on.",
+    links: [{ label: "enroll.che.school", href: "https://enroll.che.school" }],
+    more: "I lead its development: staged rollouts behind build flags, a staging→production release pipeline, per-PR QA verification, and conventional-commit automation that writes its own release notes — shipping daily to a system families depend on without breaking it.",
+    tech: "React · Node · PostgreSQL/RDS · AWS · CI/CD",
   },
   {
     name: "Teacher Attendance Portal",
@@ -285,9 +295,6 @@ export default function Home() {
       <div className="mx-auto grid max-w-[1140px] grid-cols-1 gap-0 px-6 md:grid-cols-[0.82fr_1.18fr]">
         {/* ---------- identity panel ---------- */}
         <aside className="flex flex-col border-edge py-14 md:sticky md:top-0 md:h-screen md:self-start md:border-r md:py-16 md:pr-10">
-          <a href="#" aria-label="Home" className="mb-8 inline-block text-ink">
-            <Logo className="h-10 w-10" />
-          </a>
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.12em] text-brand">
             Colorado · systems engineer
           </p>
@@ -307,7 +314,7 @@ export default function Home() {
           </p>
           <p className="mt-6 border-t border-edge pt-4 font-mono text-xs leading-relaxed text-subtle">
             <span className="font-medium text-brand">Now</span> — leading CHE's
-            tech team; <span className="text-ink">Glyde is in TestFlight beta.</span>
+            tech team; <span className="text-ink">Glyde just shipped to the App Store.</span>
           </p>
 
           <div className="mt-auto pt-8">
@@ -317,6 +324,14 @@ export default function Home() {
                 className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-on-brand transition hover:brightness-110"
               >
                 See my work
+              </a>
+              <a
+                href="/joshua-edwards-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-edge px-5 py-2.5 text-sm font-medium text-ink transition hover:border-brand hover:text-brand"
+              >
+                Résumé
               </a>
               <a
                 href="https://calendly.com/blackbeltjje/30min"
@@ -428,6 +443,14 @@ export default function Home() {
               className="font-mono text-sm text-brand hover:underline"
             >
               joshua.edwards237@gmail.com
+            </a>
+            <a
+              href="/joshua-edwards-resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-sm text-subtle transition-colors hover:text-brand"
+            >
+              Résumé ↗
             </a>
             <a
               href="https://calendly.com/blackbeltjje/30min"
