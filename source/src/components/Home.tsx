@@ -294,7 +294,7 @@ export default function Home() {
 
       <div className="mx-auto grid max-w-[1140px] grid-cols-1 gap-0 px-6 md:grid-cols-[0.82fr_1.18fr]">
         {/* ---------- identity panel ---------- */}
-        <aside className="flex flex-col border-edge py-14 md:sticky md:top-0 md:h-screen md:self-start md:border-r md:py-16 md:pr-10">
+        <aside className="flex flex-col border-edge py-14 md:sticky md:top-0 md:h-screen md:self-start md:overflow-y-auto md:border-r md:py-16 md:pr-10">
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.12em] text-brand">
             Colorado · systems engineer
           </p>
@@ -312,6 +312,21 @@ export default function Home() {
             </span>
             . On the side, iOS and local-first tools.
           </p>
+          <div className="mt-6 border-t border-edge pt-4">
+            <p className="font-mono text-xs uppercase tracking-[0.12em] text-brand">
+              About
+            </p>
+            <hr className="my-3 border-0 border-t border-edge" />
+            <p className="text-sm leading-relaxed text-body">
+              I lead the tech team at Colorado Homeschool Enrichment — full-stack
+              development, DevOps, security, and a PostgreSQL/RDS data platform —
+              while mentoring the engineers building alongside me. I've been
+              leading since before I could drive: at 14 I started a yard-work
+              business that grew to 50 households and two employees. That bias for
+              ownership shows up in everything I ship. Off the clock: black belt,
+              pad controllers and live music, and Colorado trails.
+            </p>
+          </div>
           <p className="mt-6 border-t border-edge pt-4 font-mono text-xs leading-relaxed text-subtle">
             <span className="font-medium text-brand">Now</span> — leading CHE's
             tech team; <span className="text-ink">Glyde just shipped to the App Store.</span>
@@ -425,17 +440,6 @@ export default function Home() {
           {education.map((e) => (
             <Entry key={e.name} title={e.name} meta={e.meta} dsc={e.dsc} />
           ))}
-
-          <SectionLabel id="about">About</SectionLabel>
-          <p className="max-w-[66ch] text-[15px] leading-relaxed text-body">
-            I lead the tech team at Colorado Homeschool Enrichment — full-stack
-            development, DevOps, security, and a PostgreSQL/RDS data platform —
-            while mentoring the engineers building alongside me. I've been leading
-            since before I could drive: at 14 I started a yard-work business that
-            grew to 50 households and two employees. That bias for ownership shows
-            up in everything I ship. Off the clock: black belt, pad controllers
-            and live music, and Colorado trails.
-          </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-4 border-t border-edge pt-6">
             <a
