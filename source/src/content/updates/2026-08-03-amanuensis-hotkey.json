@@ -1,0 +1,8 @@
+{
+  "date": "2026-08-03",
+  "type": "shipped",
+  "title": "Amanuensis: hotkey to text at the cursor",
+  "summary": "Closed the loop on the local macOS dictation daemon — hold right-option, speak, release, and the words appear at the cursor. Ten real dictations measured p50 223 ms / p95 270 ms end to end against a 400 ms budget, with injection verified by reading the text back out of TextEdit, Terminal, VS Code, and Chrome rather than by eye.",
+  "link": "https://github.com/joshedwards237/Amanuensis",
+  "linkLabel": "View on GitHub"
+}

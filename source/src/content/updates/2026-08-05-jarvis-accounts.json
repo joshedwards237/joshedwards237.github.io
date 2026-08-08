@@ -1,0 +1,6 @@
+{
+  "date": "2026-08-05",
+  "type": "changelog",
+  "title": "Jarvis goes multi-user behind zero-trust auth",
+  "summary": "Put the voice assistant behind Cloudflare Access, verifying RS256 identity tokens with nothing but Node's own crypto module — no new dependency — then gave every verified account its own namespaced history, memory, and settings. A history browser and cross-device settings sync landed on top, with 167 tests green."
+}
