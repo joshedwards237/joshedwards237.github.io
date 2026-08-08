@@ -43,6 +43,9 @@ export default {
         brand: "var(--fn-accent)",
         brand2: "var(--fn-accent2)",
         "on-brand": "var(--fn-on)",
+        ok: "var(--ok)",
+        wip: "var(--wip)",
+        info: "var(--info)",
         /* shadcn tokens (retained) */
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

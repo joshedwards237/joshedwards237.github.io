@@ -63,16 +63,16 @@ export function entryKey(entry: TimelineEntry): string {
 
 /** Badge (pill) classes per entry type — palette-driven (Mono / Slate). */
 export const badgeStyles: Record<UpdateType, string> = {
-  shipped: "border border-edge bg-surface text-brand",
-  research: "border border-edge bg-surface text-ink",
-  changelog: "border border-edge bg-surface text-subtle",
+  shipped: "border border-edge bg-surface text-ok",
+  research: "border border-edge bg-surface text-info",
+  changelog: "border border-edge bg-surface text-wip",
 };
 
 /** Spine-dot classes per entry type (Skills Timeline page). */
 export const dotStyles: Record<UpdateType, string> = {
-  shipped: "bg-brand",
-  research: "bg-ink",
-  changelog: "bg-subtle",
+  shipped: "bg-ok",
+  research: "bg-info",
+  changelog: "bg-wip",
 };
 
 /** Parse a YYYY-MM-DD string as a local date (avoids UTC off-by-one). */

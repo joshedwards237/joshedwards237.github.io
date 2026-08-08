@@ -16,6 +16,11 @@
     --fn-on: #ffffff;
     --fn-spot: rgba(0, 0, 0, 0.045);
 
+    /* ---- semantic status colours (AA on the light ground) ---- */
+    --ok: #2f8158;
+    --wip: #9c6a1c;
+    --info: #2f6d92;
+
     /* ---- shadcn tokens (retained for leftover ui/* primitives) ---- */
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
@@ -51,6 +56,8 @@
     --fn-accent2: #a86e3a;
     --fn-on: #ffffff;
     --fn-spot: rgba(16, 125, 110, 0.10);
+    /* info tracks the teal accent in Slate */
+    --info: #107d6e;
   }
 }
 
