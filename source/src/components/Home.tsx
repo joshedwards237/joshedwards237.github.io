@@ -22,49 +22,41 @@ const work: WorkItem[] = [
   {
     name: "Glyde",
     meta: "iOS · App Store",
-    dsc: "A running coach for Type 1 diabetics that overlays CGM data on pace and heart rate and builds adaptive VDOT training plans. Live on the App Store.",
+    dsc: "I designed, built, and launched Glyde end to end — an iOS running coach for Type 1 diabetics that overlays CGM data on pace and heart rate and builds adaptive VDOT training plans. It's live on the App Store.",
     links: [
       { label: "App Store", href: "https://apps.apple.com/app/id6780709934" },
       { label: "glyde-run.web.app", href: "https://glyde-run.web.app/" },
     ],
-    more: "Runs personalized glucose and heart-rate forecasts on-device with Core ML, and integrates Apple Health, Dexcom, Strava, and Tandem — with one hard rule: it never recommends insulin doses.",
+    more: "It runs personalized glucose and heart-rate forecasts on-device with Core ML and integrates Apple Health, Dexcom, Strava, and Tandem — with one hard rule: it never recommends insulin doses.",
     tech: "Swift · SwiftUI · Core ML · HealthKit",
   },
   {
     name: "Skripl",
     meta: "Web",
-    dsc: "A meeting recorder built around visual context — capture screenshots and annotate your screen while recording.",
+    dsc: "I conceived, engineered, and shipped Skripl myself — a meeting recorder built around visual context that lets you capture screenshots and annotate your screen while you record.",
     links: [{ label: "skripl.co", href: "https://skripl.co/" }],
-    more: "Turns the meeting summary into context-specific tasks pushed straight into your task-management system, so what you saw and what you said stay connected.",
+    more: "It turns each meeting summary into context-specific tasks pushed straight into your task manager, so what you saw and what you said stay connected.",
     tech: "TypeScript · React",
   },
   {
     name: "CHE Enrollment Portal",
     meta: "Web · team lead",
-    dsc: "The enrollment portal and enrollment flow for Colorado Homeschool Enrichment — where families enroll students in classes, and the platform the whole org runs on.",
+    dsc: "I planned, designed, built, tested, and shipped the CHE enrollment portal end to end — the full stack behind how families enroll students, and the platform Colorado Homeschool Enrichment runs on.",
     links: [{ label: "enroll.che.school", href: "https://enroll.che.school" }],
-    more: "I lead its development: staged rollouts behind build flags, a staging→production release pipeline, per-PR QA verification, and conventional-commit automation that writes its own release notes — shipping daily to a system families depend on without breaking it.",
+    more: "As tech lead I own its release discipline: staged rollouts behind build flags, a staging→production pipeline, per-PR QA verification, and conventional-commit automation that writes its own release notes — so the team ships daily without breaking a system families depend on.",
     tech: "React · Node · PostgreSQL/RDS · AWS · CI/CD",
-  },
-  {
-    name: "Teacher Attendance Portal",
-    meta: "Web · in production",
-    dsc: "A web portal that streamlines how teachers record attendance — real-time updates, class management, and automated reporting.",
-    links: [{ label: "GitHub", href: "https://github.com/joshedwards237" }],
-    more: "Built with Python and HTML/CSS on Airtable and AWS. In production at Colorado Homeschool Enrichment, where it runs school-wide and replaced a manual, error-prone process.",
-    tech: "Python · Airtable · AWS",
   },
   {
     name: "NeoPad",
     meta: "Windows",
-    dsc: "Pad software for musicians during live performances — customizable pad layouts, real-time effects, and audio routing.",
+    dsc: "I built NeoPad, pad software musicians use during live performances, with customizable pad layouts, real-time effects, and audio routing.",
     links: [{ label: "GitHub", href: "https://github.com/joshedwards237/NeoPad" }],
-    more: "Built with modern UI/UX principles for a clear, easy-to-use interface that bridges beginner and professional needs.",
+    more: "I designed it around clear, modern UI/UX so it bridges beginner and professional needs.",
   },
   {
     name: "cadence-bpm",
     meta: "Script",
-    dsc: "Pairs the Spotify API with a verified-BPM database to build playlists from your liked songs in a target BPM range — cadence-locked running music.",
+    dsc: "I wrote cadence-bpm, a script that pairs the Spotify API with a verified-BPM database to build playlists from your liked songs within a target BPM range — cadence-locked running music.",
     links: [
       { label: "GitHub", href: "https://github.com/joshedwards237/cadence-bpm" },
     ],
@@ -86,7 +78,7 @@ const roles: Role[] = [
     title: "Systems Engineer & Tech Team Lead",
     org: "Colorado Homeschool Enrichment",
     when: "2024 → present",
-    dsc: "Lead the tech team — planning, code review, mentoring, and delivery across web, data, and infrastructure.",
+    dsc: "I lead the tech team across web, data, and infrastructure — planning, code review, mentoring, and delivery.",
     more: (
       <ul className="ml-4 list-disc space-y-1.5">
         <li>
@@ -109,7 +101,7 @@ const roles: Role[] = [
     title: "IT Service Desk Technician",
     org: "Rooted Software",
     when: "2023",
-    dsc: "Front-line technical support across Microsoft 365, Azure, and Google Admin environments.",
+    dsc: "I provided front-line technical support across Microsoft 365, Azure, and Google Admin environments.",
     more: (
       <ul className="ml-4 list-disc space-y-1.5">
         <li>Managed client communication and support, in person and by phone.</li>
@@ -124,7 +116,7 @@ const roles: Role[] = [
     title: "Owner & Manager",
     org: "Self-employed",
     when: "2018 → present",
-    dsc: "Founded and grew a yard-work and home-maintenance business — starting at 14.",
+    dsc: "I founded and grew a yard-work and home-maintenance business, starting at 14.",
     more: "Expanded to serve 50+ households with two employees, building customer relations, time management, and a bias for ownership.",
   },
 ];
@@ -146,9 +138,9 @@ const stack: { k: string; t: string }[] = [
 
 const education: { name: string; meta: string; dsc: string }[] = [
   {
-    name: "University of Colorado Colorado Springs",
+    name: "University of Colorado, Colorado Springs",
     meta: "B.S. Computer Science · 2025",
-    dsc: "Graduated December 2025 with a 3.9 GPA from the ABET-accredited program. Coursework across software and algorithm design, advanced mathematics and physics, and systems development.",
+    dsc: "Graduated December 2025 summa cum laude from the ABET-accredited program. Coursework across software and algorithm design, advanced mathematics and physics, and systems development.",
   },
   {
     name: "Pikes Peak State College",
@@ -310,7 +302,7 @@ export default function Home() {
               full-stack apps, AWS &amp; PostgreSQL infrastructure, and the team
               that ships them
             </span>
-            . On the side, iOS and local-first tools.
+            . On the side, I build iOS and local-first tools.
           </p>
           <div className="mt-6 border-t border-edge pt-4">
             <p className="font-mono text-xs uppercase tracking-[0.12em] text-brand">
