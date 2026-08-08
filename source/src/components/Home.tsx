@@ -1,4 +1,18 @@
 import { useEffect, useState, type ReactNode } from "react";
+import {
+  Hammer,
+  Briefcase,
+  Layers,
+  FlaskConical,
+  GraduationCap,
+  User,
+  Smartphone,
+  Globe,
+  Server,
+  Music,
+  Terminal,
+  type LucideIcon,
+} from "lucide-react";
 import SocialIcons from "@/components/SocialIcons";
 import PaletteToggle from "@/components/PaletteToggle";
 import { formatDate, getUpdates } from "@/lib/updates";
@@ -16,12 +30,16 @@ interface WorkItem {
   links: Link[];
   more?: ReactNode;
   tech?: string;
+  icon: LucideIcon;
+  status: "live" | "wip";
 }
 
 const work: WorkItem[] = [
   {
     name: "Glyde",
     meta: "iOS · App Store",
+    icon: Smartphone,
+    status: "live",
     dsc: "I designed, built, and launched Glyde end to end — an iOS running coach for Type 1 diabetics that overlays CGM data on pace and heart rate and builds adaptive VDOT training plans. It's live on the App Store.",
     links: [
       { label: "App Store", href: "https://apps.apple.com/app/id6780709934" },
@@ -33,6 +51,8 @@ const work: WorkItem[] = [
   {
     name: "Skripl",
     meta: "Web",
+    icon: Globe,
+    status: "live",
     dsc: "I conceived, engineered, and shipped Skripl myself — a meeting recorder built around visual context that lets you capture screenshots and annotate your screen while you record.",
     links: [{ label: "skripl.co", href: "https://skripl.co/" }],
     more: "It turns each meeting summary into context-specific tasks pushed straight into your task manager, so what you saw and what you said stay connected.",
@@ -41,6 +61,8 @@ const work: WorkItem[] = [
   {
     name: "CHE Enrollment Portal",
     meta: "Web · team lead",
+    icon: Server,
+    status: "live",
     dsc: "I planned, designed, built, tested, and shipped the CHE enrollment portal end to end — the full stack behind how families enroll students, and the platform Colorado Homeschool Enrichment runs on.",
     links: [{ label: "enroll.che.school", href: "https://enroll.che.school" }],
     more: "As tech lead I own its release discipline: staged rollouts behind build flags, a staging→production pipeline, per-PR QA verification, and conventional-commit automation that writes its own release notes — so the team ships daily without breaking a system families depend on.",
@@ -49,6 +71,8 @@ const work: WorkItem[] = [
   {
     name: "NeoPad",
     meta: "Windows",
+    icon: Music,
+    status: "wip",
     dsc: "I built NeoPad, pad software musicians use during live performances, with customizable pad layouts, real-time effects, and audio routing.",
     links: [{ label: "GitHub", href: "https://github.com/joshedwards237/NeoPad" }],
     more: "I designed it around clear, modern UI/UX so it bridges beginner and professional needs.",
@@ -56,6 +80,8 @@ const work: WorkItem[] = [
   {
     name: "cadence-bpm",
     meta: "Script",
+    icon: Terminal,
+    status: "live",
     dsc: "I wrote cadence-bpm, a script that pairs the Spotify API with a verified-BPM database to build playlists from your liked songs within a target BPM range — cadence-locked running music.",
     links: [
       { label: "GitHub", href: "https://github.com/joshedwards237/cadence-bpm" },
@@ -155,15 +181,29 @@ const typeTag: Record<string, string> = {
   research: "research",
   changelog: "changelog",
 };
+const typeColor: Record<string, string> = {
+  shipped: "text-ok",
+  research: "text-info",
+  changelog: "text-wip",
+};
 
 /* --------------------------- components -------------------------- */
 
-function SectionLabel({ children, id }: { children: ReactNode; id?: string }) {
+function SectionLabel({
+  children,
+  id,
+  icon: Icon,
+}: {
+  children: ReactNode;
+  id?: string;
+  icon?: LucideIcon;
+}) {
   return (
     <p
       id={id}
-      className="mb-4 mt-11 scroll-mt-24 font-mono text-[11px] uppercase tracking-[0.16em] text-subtle first:mt-0"
+      className="mb-4 mt-11 flex items-center gap-2 scroll-mt-24 font-mono text-[11px] uppercase tracking-[0.16em] text-subtle first:mt-0"
     >
+      {Icon && <Icon className="h-3.5 w-3.5 text-brand" aria-hidden="true" />}
       {children}
     </p>
   );
@@ -176,6 +216,8 @@ function Entry({
   links,
   more,
   tech,
+  icon: Icon,
+  status,
 }: {
   title: string;
   meta: string;
@@ -183,13 +225,22 @@ function Entry({
   links?: Link[];
   more?: ReactNode;
   tech?: string;
+  icon?: LucideIcon;
+  status?: "live" | "wip";
 }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="border-b border-edge py-5">
       <div className="flex items-baseline justify-between gap-4">
         <h3 className="font-serif text-xl font-semibold text-ink">{title}</h3>
-        <span className="whitespace-nowrap font-mono text-xs text-subtle">
+        <span className="flex items-center gap-1.5 whitespace-nowrap font-mono text-xs text-subtle">
+          {status && (
+            <span
+              className={`h-1.5 w-1.5 rounded-full ${status === "live" ? "bg-ok" : "bg-wip"}`}
+              aria-hidden="true"
+            />
+          )}
+          {Icon && <Icon className="h-3.5 w-3.5" aria-hidden="true" />}
           {meta}
         </span>
       </div>
@@ -286,7 +337,14 @@ export default function Home() {
 
       <div className="mx-auto grid max-w-[1140px] grid-cols-1 gap-0 px-6 md:grid-cols-[0.82fr_1.18fr]">
         {/* ---------- identity panel ---------- */}
-        <aside className="flex flex-col border-edge py-14 md:sticky md:top-0 md:h-screen md:self-start md:overflow-y-auto md:border-r md:py-16 md:pr-10">
+        <aside
+          className="flex flex-col border-edge py-14 md:sticky md:top-0 md:h-screen md:self-start md:overflow-y-auto md:border-r md:py-16 md:pr-10"
+          style={{
+            backgroundImage:
+              "radial-gradient(var(--fn-line) 1px, transparent 1px)",
+            backgroundSize: "22px 22px",
+          }}
+        >
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.12em] text-brand">
             Colorado · systems engineer
           </p>
@@ -305,7 +363,8 @@ export default function Home() {
             . On the side, I build iOS and local-first tools.
           </p>
           <div className="mt-6 border-t border-edge pt-4">
-            <p className="font-mono text-xs uppercase tracking-[0.12em] text-brand">
+            <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-brand">
+              <User className="h-3.5 w-3.5" aria-hidden="true" />
               About
             </p>
             <hr className="my-3 border-0 border-t border-edge" />
@@ -355,7 +414,7 @@ export default function Home() {
 
         {/* ---------- content ---------- */}
         <main className="pb-20 md:py-16 md:pl-11">
-          <SectionLabel id="work">Selected work</SectionLabel>
+          <SectionLabel id="work" icon={Hammer}>Selected work</SectionLabel>
           {work.map((w) => (
             <Entry
               key={w.name}
@@ -365,6 +424,8 @@ export default function Home() {
               links={w.links}
               more={w.more}
               tech={w.tech}
+              icon={w.icon}
+              status={w.status}
             />
           ))}
           <a
@@ -376,7 +437,7 @@ export default function Home() {
             More on GitHub ↗
           </a>
 
-          <SectionLabel id="experience">Experience</SectionLabel>
+          <SectionLabel id="experience" icon={Briefcase}>Experience</SectionLabel>
           {roles.map((r) => (
             <Entry
               key={r.title}
@@ -388,7 +449,7 @@ export default function Home() {
             />
           ))}
 
-          <SectionLabel id="stack">Stack</SectionLabel>
+          <SectionLabel id="stack" icon={Layers}>Stack</SectionLabel>
           <div className="grid gap-6 sm:grid-cols-2">
             {stack.map((s) => (
               <div key={s.k}>
@@ -400,7 +461,7 @@ export default function Home() {
             ))}
           </div>
 
-          <SectionLabel id="lab-notes">
+          <SectionLabel id="lab-notes" icon={FlaskConical}>
             Lab Notes <span className="text-subtle">· updated weekly</span>
           </SectionLabel>
           <div className="space-y-0">
@@ -415,7 +476,7 @@ export default function Home() {
                 <span className="flex-1 text-sm font-medium text-ink">
                   {entry.title}
                 </span>
-                <span className="font-mono text-[11px] uppercase tracking-wide text-brand">
+                <span className={`font-mono text-[11px] uppercase tracking-wide ${typeColor[entry.type]}`}>
                   {typeTag[entry.type]}
                 </span>
               </div>
@@ -428,7 +489,7 @@ export default function Home() {
             Enter the Skills Timeline →
           </a>
 
-          <SectionLabel id="education">Education</SectionLabel>
+          <SectionLabel id="education" icon={GraduationCap}>Education</SectionLabel>
           {education.map((e) => (
             <Entry key={e.name} title={e.name} meta={e.meta} dsc={e.dsc} />
           ))}
