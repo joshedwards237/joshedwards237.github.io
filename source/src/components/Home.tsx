@@ -146,9 +146,9 @@ const stack: { k: string; t: string }[] = [
 
 const education: { name: string; meta: string; dsc: string }[] = [
   {
-    name: "University of Colorado Colorado Springs",
+    name: "University of Colorado, Colorado Springs",
     meta: "B.S. Computer Science · 2025",
-    dsc: "Graduated December 2025 with a 3.9 GPA from the ABET-accredited program. Coursework across software and algorithm design, advanced mathematics and physics, and systems development.",
+    dsc: "Graduated December 2025 summa cum laude from the ABET-accredited program. Coursework across software and algorithm design, advanced mathematics and physics, and systems development.",
   },
   {
     name: "Pikes Peak State College",
