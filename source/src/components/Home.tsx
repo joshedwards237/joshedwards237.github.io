@@ -7,10 +7,18 @@ import {
   GraduationCap,
   User,
   Smartphone,
-  Globe,
+  MonitorPlay,
   Server,
   Music,
   Terminal,
+  Mic,
+  ClipboardCheck,
+  Bot,
+  CalendarCheck,
+  ShieldCheck,
+  KeyRound,
+  Wallet,
+  Plug,
   type LucideIcon,
 } from "lucide-react";
 import SocialIcons from "@/components/SocialIcons";
@@ -34,7 +42,8 @@ interface WorkItem {
   status: "live" | "wip";
 }
 
-const work: WorkItem[] = [
+// Strongest / most recent — shown in the hero "Selected work".
+const featuredWork: WorkItem[] = [
   {
     name: "Glyde",
     meta: "iOS · App Store",
@@ -46,17 +55,7 @@ const work: WorkItem[] = [
       { label: "glyde-run.web.app", href: "https://glyde-run.web.app/" },
     ],
     more: "It runs personalized glucose and heart-rate forecasts on-device with Core ML and integrates Apple Health, Dexcom, Strava, and Tandem — with one hard rule: it never recommends insulin doses.",
-    tech: "Swift · SwiftUI · Core ML · HealthKit",
-  },
-  {
-    name: "Skripl",
-    meta: "Web",
-    icon: Globe,
-    status: "live",
-    dsc: "I conceived, engineered, and shipped Skripl myself — a meeting recorder built around visual context that lets you capture screenshots and annotate your screen while you record.",
-    links: [{ label: "skripl.co", href: "https://skripl.co/" }],
-    more: "It turns each meeting summary into context-specific tasks pushed straight into your task manager, so what you saw and what you said stay connected.",
-    tech: "TypeScript · React",
+    tech: "Swift · SwiftUI · Core ML (Python/TensorFlow) · Supabase/Postgres · Firebase Hosting · HealthKit",
   },
   {
     name: "CHE Enrollment Portal",
@@ -67,6 +66,99 @@ const work: WorkItem[] = [
     links: [{ label: "enroll.che.school", href: "https://enroll.che.school" }],
     more: "As tech lead I own its release discipline: staged rollouts behind build flags, a staging→production pipeline, per-PR QA verification, and conventional-commit automation that writes its own release notes — so the team ships daily without breaking a system families depend on.",
     tech: "React · Node · PostgreSQL/RDS · AWS · CI/CD",
+  },
+  {
+    name: "Skripl",
+    meta: "macOS · Web",
+    icon: MonitorPlay,
+    status: "live",
+    dsc: "I conceived, engineered, and shipped Skripl myself — a macOS app that records and summarizes meetings with multimodal AI, capturing on-screen context alongside the audio.",
+    links: [{ label: "skripl.co", href: "https://skripl.co/" }],
+    more: "It turns each meeting summary into context-specific tasks pushed straight into your task manager, so what you saw and what you said stay connected.",
+    tech: "Swift · SwiftUI · ScreenCaptureKit · React · Vite · TypeScript · Python · Firebase (Firestore, Cloud Functions, Hosting, iOS SDK) · Gemini · GitHub Actions CI",
+  },
+  {
+    name: "Amanuensis",
+    meta: "Open source · macOS",
+    icon: Mic,
+    status: "wip",
+    dsc: "I specified and built Amanuensis, an open-source, local-first dictation tool — writing a detailed PRD covering the speech-to-text engine, OS-level text-injection layer, and licensing, then executing the build in phases.",
+    links: [
+      { label: "GitHub", href: "https://github.com/joshedwards237/Amanuensis" },
+    ],
+    more: "Everything stays on-device — no audio leaves the machine — and I drove the phased build through Claude Code with measured latency gates before each stage shipped.",
+    tech: "Python · local speech-to-text models",
+  },
+  {
+    name: "CDE Compliance & Audit Infrastructure",
+    meta: "Python · compliance",
+    icon: ClipboardCheck,
+    status: "live",
+    dsc: "I authored CHE's data-compliance program — a FERPA, COPPA, and Colorado Student Data Transparency Act report with a phased remediation plan — and built the data pipeline behind it.",
+    links: [],
+    more: "The pipeline cross-references CDE audit lists against Alma SIS exports to flag unenrolled or misclassified students, and generates the formatted distance reports (students beyond 50 miles from campus) required for audit submission.",
+    tech: "Python · Alma SIS exports · report generation",
+  },
+  {
+    name: "Claude Code Operating Practice",
+    meta: "AI engineering · CHE",
+    icon: Bot,
+    status: "live",
+    dsc: "I architected the AI-assisted development practice my team runs on — a CLAUDE.md context standard plus a companion HARNESS.md operating contract that separates project context from explicit agent-behavior rules.",
+    links: [],
+    more: "I built the supporting tooling too: a FERPA compliance-checking slash command and a stress-test harness with sanity/smoke/stress phases, plus a phased execution model with explicit human approval gates — so AI accelerates implementation while security and compliance decisions stay under direct engineering control.",
+    tech: "Claude Code · custom MCP tooling",
+  },
+];
+
+// Everything else — revealed by the "Show all projects" toggle.
+const moreWork: WorkItem[] = [
+  {
+    name: "Firebase Attendance Tracking System",
+    meta: "Firebase · CHE",
+    icon: CalendarCheck,
+    status: "live",
+    dsc: "I rebuilt CHE's attendance tracking from the ground up on Firebase, designing the Firestore schema and writing the Cloud Functions that handle the attendance logic.",
+    links: [],
+    more: "I ran a parallel-run migration so the legacy system stayed live and verifiable while the new one came online — no downtime and no data loss during cutover.",
+    tech: "Firebase (Firestore, Cloud Functions) · Python",
+  },
+  {
+    name: "Campus Leader Portal",
+    meta: "Web · CHE",
+    icon: ShieldCheck,
+    status: "live",
+    dsc: "I built a role-based admin portal for campus leadership, enforcing access control server-side with Firebase Auth custom claims rather than trusting the frontend.",
+    links: [],
+    more: "I designed the permission model and the UI shells from scratch.",
+    tech: "Firebase Auth · React · Firestore",
+  },
+  {
+    name: "Google Workspace 2SV Enforcement Rollout",
+    meta: "Google Workspace · CHE",
+    icon: KeyRound,
+    status: "live",
+    dsc: "I led an org-wide two-step-verification rollout — phased enforcement via configuration groups, exception handling for edge cases, and staff-facing documentation to keep it low-friction.",
+    links: [],
+    tech: "Google Workspace Admin",
+  },
+  {
+    name: "Financial Accountability App",
+    meta: "React Native",
+    icon: Wallet,
+    status: "wip",
+    dsc: "I'm building a household finance app that connects bank accounts through Plaid, with selective account visibility shared between accountability partners and budget-based spending alerts.",
+    links: [],
+    tech: "React Native · Firebase · Plaid API",
+  },
+  {
+    name: "Custom MCP Servers",
+    meta: "Node · Python",
+    icon: Plug,
+    status: "live",
+    dsc: "I built Model Context Protocol servers that extend Claude Code's tool access, including an iMessage integration and an Apple developer-documentation search tool.",
+    links: [],
+    tech: "Node.js / Python · MCP",
   },
   {
     name: "NeoPad",
@@ -139,8 +231,8 @@ const roles: Role[] = [
     ),
   },
   {
-    title: "Owner & Manager",
-    org: "Self-employed",
+    title: "Founder & Owner",
+    org: "Odd Job Bros",
     when: "2018 → present",
     dsc: "I founded and grew a yard-work and home-maintenance business, starting at 14.",
     more: "Expanded to serve 50+ households with two employees, building customer relations, time management, and a bias for ownership.",
@@ -302,6 +394,8 @@ function Entry({
 /* ------------------------------ page ----------------------------- */
 
 export default function Home() {
+  const [allProjects, setAllProjects] = useState(false);
+
   // Cursor spotlight on the identity panel (skipped when reduced-motion).
   useEffect(() => {
     if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
@@ -415,7 +509,7 @@ export default function Home() {
         {/* ---------- content ---------- */}
         <main className="pb-20 md:py-16 md:pl-11">
           <SectionLabel id="work" icon={Hammer}>Selected work</SectionLabel>
-          {work.map((w) => (
+          {featuredWork.map((w) => (
             <Entry
               key={w.name}
               title={w.name}
@@ -428,14 +522,55 @@ export default function Home() {
               status={w.status}
             />
           ))}
-          <a
-            href="https://github.com/joshedwards237"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-block font-mono text-xs text-subtle transition-colors hover:text-brand"
+
+          <button
+            type="button"
+            onClick={() => setAllProjects((o) => !o)}
+            aria-expanded={allProjects}
+            className="mt-5 inline-flex items-center gap-2 rounded-full border border-edge px-5 py-2.5 text-sm font-medium text-ink transition hover:border-brand hover:text-brand"
           >
-            More on GitHub ↗
-          </a>
+            {allProjects
+              ? "Show fewer projects"
+              : `Show all projects (${moreWork.length} more)`}
+            <span
+              className={`inline-block transition-transform ${
+                allProjects ? "rotate-45" : ""
+              }`}
+            >
+              +
+            </span>
+          </button>
+          <div
+            className={`grid transition-all duration-300 ease-out ${
+              allProjects
+                ? "mt-1 grid-rows-[1fr] opacity-100"
+                : "grid-rows-[0fr] opacity-0"
+            }`}
+          >
+            <div className="overflow-hidden">
+              {moreWork.map((w) => (
+                <Entry
+                  key={w.name}
+                  title={w.name}
+                  meta={w.meta}
+                  dsc={w.dsc}
+                  links={w.links}
+                  more={w.more}
+                  tech={w.tech}
+                  icon={w.icon}
+                  status={w.status}
+                />
+              ))}
+              <a
+                href="https://github.com/joshedwards237"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block font-mono text-xs text-subtle transition-colors hover:text-brand"
+              >
+                More on GitHub ↗
+              </a>
+            </div>
+          </div>
 
           <SectionLabel id="experience" icon={Briefcase}>Experience</SectionLabel>
           {roles.map((r) => (
