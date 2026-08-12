@@ -19,6 +19,7 @@ import {
   KeyRound,
   Wallet,
   Plug,
+  Database,
   type LucideIcon,
 } from "lucide-react";
 import SocialIcons from "@/components/SocialIcons";
@@ -66,6 +67,16 @@ const featuredWork: WorkItem[] = [
     links: [{ label: "enroll.che.school", href: "https://enroll.che.school" }],
     more: "As tech lead I own its release discipline: staged rollouts behind build flags, a staging→production pipeline, per-PR QA verification, and conventional-commit automation that writes its own release notes — so the team ships daily without breaking a system families depend on.",
     tech: "React · Node · PostgreSQL/RDS · AWS · CI/CD",
+  },
+  {
+    name: "Airtable → PostgreSQL Migration",
+    meta: "AWS · data infra",
+    icon: Database,
+    status: "wip",
+    dsc: "I'm architecting the migration of CHE's school-operations data out of a 130+-field denormalized Airtable base into a 22-table, 3NF PostgreSQL schema on AWS RDS — normalizing campuses, courses, class enrollments, and budget data into purpose-built tables with junction tables, enums, and a full ERD.",
+    links: [],
+    more: "The Python ETL on AWS Lambda extracts from Airtable, applies transforms (multi-select fields become discrete boolean columns), and idempotently upserts on a composite key, with secrets in AWS Secrets Manager. A dedicated reporting schema maps operational data into state-compliance export formats (~56 fields), replacing manual reformatting with a repeatable SQL SELECT — and I'm running a phased cutover behind a dual-write transition layer that writes to Airtable and Postgres in parallel to keep both systems consistent with zero downtime.",
+    tech: "AWS (RDS · Lambda · Secrets Manager) · PostgreSQL · Python · Airtable API · ETL · 3NF",
   },
   {
     name: "Skripl",
