@@ -52,7 +52,7 @@ const featuredWork: WorkItem[] = [
     status: "live",
     dsc: "I designed, built, and launched Glyde end to end — an iOS running coach for Type 1 diabetics that overlays CGM data on pace and heart rate and builds adaptive VDOT training plans. It's live on the App Store.",
     links: [
-      { label: "App Store", href: "https://apps.apple.com/app/id6780709934" },
+      { label: "App Store", href: "https://apps.apple.com/us/app/glyde-running/id6780709934" },
       { label: "glyde-run.web.app", href: "https://glyde-run.web.app/" },
     ],
     more: "It runs personalized glucose and heart-rate forecasts on-device with Core ML and integrates Apple Health, Dexcom, Strava, and Tandem — with one hard rule: it never recommends insulin doses.",
