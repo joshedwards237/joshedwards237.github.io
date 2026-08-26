@@ -2,10 +2,10 @@ import path from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// base is "/" so all asset URLs are root-relative (the repo root is the
-// deployable artifact for both GitHub Pages and Hostinger).
+// base is "/old-design/" — the previous site is archived at that subfolder;
+// the redesign is served at the repo root. Hash routing survives the subfolder.
 export default defineConfig({
-  base: "/",
+  base: "/old-design/",
   plugins: [react()],
   resolve: {
     alias: {
