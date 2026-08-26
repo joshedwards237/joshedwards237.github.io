@@ -19,13 +19,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const sourceDir = path.resolve(__dirname, "..");        // source/
 const distDir = path.join(sourceDir, "dist");           // source/dist
 const distAssets = path.join(distDir, "assets");
-const repoRoot = path.resolve(sourceDir, "..");         // repo root
+// The old site is archived at <repo root>/old-design (the redesign owns root).
+const repoRoot = path.join(path.resolve(sourceDir, ".."), "old-design");
 const rootAssets = path.join(repoRoot, "assets");
 
 if (!existsSync(distDir) || !existsSync(path.join(distDir, "index.html"))) {
   console.error("dist/index.html not found. Run `npm run build` first.");
   process.exit(1);
 }
+mkdirSync(repoRoot, { recursive: true });
 
 // 1. Remove old compiled bundles from the root assets folder.
 //    Only main.*.js and main.*.css are build artifacts; everything else
