@@ -28,7 +28,7 @@ export default function SocialIcons({ className = "" }: SocialIconsProps) {
     },
     {
       label: "Email",
-      href: "mailto:joshua.edwards237@gmail.com",
+      href: "mailto:josh@joshuaedwards.me",
       external: false,
       // envelope (stroke)
       node: (

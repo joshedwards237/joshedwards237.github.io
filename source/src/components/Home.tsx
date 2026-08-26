@@ -642,10 +642,10 @@ export default function Home() {
 
           <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-4 border-t border-edge pt-6">
             <a
-              href="mailto:joshua.edwards237@gmail.com"
+              href="mailto:josh@joshuaedwards.me"
               className="font-mono text-sm text-brand hover:underline"
             >
-              joshua.edwards237@gmail.com
+              josh@joshuaedwards.me
             </a>
             <a
               href="/joshua-edwards-resume.pdf"
