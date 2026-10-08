@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-06",
+  "type": "changelog",
+  "title": "Gave three repos an entry point for the agents working in them",
+  "summary": "Wrote an AI_START_HERE document for three active projects — what each root file is for, which are stale, and the verification rules with the dated incident behind each one. Every figure was re-derived by command rather than trusted, which is how the stale harness badge, a checkout eight commits behind origin, and two live defects got caught.",
+  "link": "https://github.com/joshedwards237/Amanuensis/pull/70",
+  "linkLabel": "See the Amanuensis one"
+}

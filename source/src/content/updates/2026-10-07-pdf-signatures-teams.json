@@ -1,0 +1,6 @@
+{
+  "date": "2026-10-07",
+  "type": "shipped",
+  "title": "Shared teams in the PDF signing app",
+  "summary": "The document signing tool only ever showed you what your own account owned, so a partner organization asking for an admin who could see everything had nothing to grant. Built team-scoped access with an org admin — documents, batches, and envelopes now shared across a team instead of stranded per account."
+}

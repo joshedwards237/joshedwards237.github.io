@@ -1,0 +1,6 @@
+{
+  "date": "2026-10-07",
+  "type": "changelog",
+  "title": "Moved a domain between Workspace tenants without guessing",
+  "summary": "Transferred a live domain across Google Workspace tenants, sending three stamped baseline messages beforehand to prove delivery worked and re-verifying after. When a rollback left the domain unroutable, the baselines made the outage window exact instead of a question."
+}
